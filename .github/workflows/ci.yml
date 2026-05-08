@@ -3,15 +3,12 @@ name: CI
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 0 * * 0'
-
 permissions:
   contents: read
 
 jobs:
   test-node:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
 
     strategy:
@@ -34,7 +31,7 @@ jobs:
         run: npm test
 
   test-browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
 
     steps:
